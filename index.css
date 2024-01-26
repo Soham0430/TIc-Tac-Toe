@@ -1,0 +1,124 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(#191955, #aa00c6);
+}
+
+nav {
+    height: 6vh;
+    text-align: center;
+    line-height: 6vh;
+    font-weight: bold;
+    font-size: larger;
+    background-color: #191955;
+    color: white;
+}
+
+.container {
+    height: 94vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    perspective: 500px;
+}
+
+.tictactoe {
+    display: flex;
+    height: 60vmin;
+    width: 60vmin;
+    column-gap: 1.7vmin;
+    flex-wrap: wrap;
+    transform-style: preserve-3d;
+}
+
+.block {
+    margin-bottom: 0;
+    height: 18vmin;
+    width: 18vmin;
+    background-color: blueviolet;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    transition: transform 0.3s ease;
+}
+
+.block:hover {
+    transform: translateZ(20px);
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vmin;
+    height: 7vh;
+    color: #191955;
+    font-weight: bold;
+    font-size: medium;
+    background-color: white;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+}
+
+
+
+.Res-but {
+    transform-style: preserve-3d;
+}
+
+.Res-but button {
+    width: 20vmin;
+    height: 5vh;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+    color: #191955;
+    background-color: white;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.Res-but button:hover {
+    transform: translateZ(10px);
+}
+
+.winning-animation {
+    animation: displayAnimation infinite 2s ease-in-out;
+
+}
+
+.display-animation {
+    animation: displayAnimation infinite 2s ease-in-out;
+}
+@keyframes displayAnimation {
+    0%, 100% {
+        transform: translateZ(0);
+    }
+    50% {
+        transform: translateZ(10px);
+    }
+}
+@media (max-width:600px){
+    .Res-but button{
+        width: 40vmin;
+        font-size: small;
+    }
+    .display{
+        font-size: small;
+        width: 80vmin;
+    }
+    .container{
+        justify-content: flex-start;
+    }
+    .tictactoe{
+        margin-top:30px ;
+    }
+}
